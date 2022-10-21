@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { getReviews } from "servises/getReviews"
 import { ErrorMessage } from "components/ErrorMessage/ErrorMessage";
 import { Loader } from "components/Loader/Loader";
+import { ReviewsList, ReviewsListItem, Author, Review } from './Review.styled'
 
 export const Reviews = () => {
 	const [reviews, setReviewss] = useState();
@@ -35,16 +36,17 @@ export const Reviews = () => {
 	if (!reviews) {
 		return;
 	}
-
+	console.log(reviews);
 	return (
-		<><ul>
-			{reviews.map(review => <li key={review.id} >
-				<h2>Name: {review.author_details.name}</h2>
-				<p>Review: {review.content}</p>
-			</li>)}
-		</ul>
+		<>
+			<ReviewsList>
+				{reviews.map(review => <ReviewsListItem key={review.id} >
+					<Author><span>Name: </span>{review.author}</Author>
+					<Review><span>Review:</span> {review.content}</Review>
+				</ReviewsListItem>)}
+			</ReviewsList>
 			{isLoading && <Loader />}
-			{error && <ErrorMessage />}
+			{error && <ErrorMessage text="Sorry, there isn`t any reviews" />}
 		</>
 	)
 }

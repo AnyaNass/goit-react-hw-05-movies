@@ -1,3 +1,5 @@
+import { Puff } from 'react-loader-spinner'
+
 export const Loader = () => {
-	return <div>loading...</div>
+	return <Puff color='red' wrapperStyle={{ justifyContent: "center" }} />
 }
