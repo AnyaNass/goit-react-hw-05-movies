@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom'
-// import { Outlet } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<BrowserRouter basename="/goit-react-hw-05-movies/">
+		<BrowserRouter basename="/anyanass.github.io/goit-react-hw-05-movies/">
 			<App />
 		</BrowserRouter>
 	</React.StrictMode>
 );
+
+// basename = "/anyanass.github.io/goit-react-hw-05-movies/"
