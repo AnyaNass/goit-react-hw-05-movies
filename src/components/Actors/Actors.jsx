@@ -4,6 +4,7 @@ import { getActors } from "servises/getActors"
 import { ActorsList, Actor, Img, Description, Character } from "./Actors.styled"
 import { Loader } from "components/Loader/Loader"
 import { ErrorMessage } from "components/ErrorMessage/ErrorMessage"
+import { checkImage } from '../../helpers/checkImage'
 
 export const Actors = () => {
 	const [actors, setActors] = useState();
@@ -37,16 +38,6 @@ export const Actors = () => {
 		return;
 	}
 
-	const checkImage = (img) => {
-		if (img) {
-			return `https://image.tmdb.org/t/p/w500${img}`
-		}
-		if (!img) {
-			return "https://scalar.usc.edu/works/guide/media/gradient.jpg"
-		}
-	}
-
-	console.log(actors);
 	return (<>
 		<ActorsList>
 			{actors.map(({ id, name, character, profile_path }) => <Actor key={id} >

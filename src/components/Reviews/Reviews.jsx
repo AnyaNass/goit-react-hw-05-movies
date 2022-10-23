@@ -36,7 +36,7 @@ export const Reviews = () => {
 	if (!reviews) {
 		return;
 	}
-	console.log(reviews);
+
 	return (
 		<>
 			<ReviewsList>
