@@ -46,7 +46,7 @@ export const Reviews = () => {
 				</ReviewsListItem>)}
 			</ReviewsList>
 			{isLoading && <Loader />}
-			{error && <ErrorMessage text="Sorry, there isn`t any reviews" />}
+			{error && <ErrorMessage text="Sorry, there aren`t any reviews" />}
 		</>
 	)
 }

@@ -58,7 +58,7 @@ export const Actors = () => {
 			</Actor>)}
 		</ActorsList>
 		{isLoading && <Loader />}
-		{error && <ErrorMessage text="Sorry, there isn`t any actors" />}
+		{error && <ErrorMessage text="Sorry, there aren`t any actors" />}
 	</>
 	)
 }
