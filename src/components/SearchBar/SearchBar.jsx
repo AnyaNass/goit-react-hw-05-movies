@@ -21,17 +21,17 @@ export const SearchBar = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		document.querySelector('[href="/movies"]').addEventListener('click', () => {
-			setMovies([])
-			setError(false)
-		})
+		document.querySelector('[href="/movies"]').addEventListener('click', onClick)
 
 		return () => {
-			document.querySelector('[href="/movies"]').removeEventListener('click', () => {
-				setMovies([])
-			})
+			document.querySelector('[href="/movies"]').removeEventListener('click', onClick)
 		}
 	}, [])
+
+	const onClick = () => {
+		setMovies([])
+		setError(false)
+	}
 
 	const handleSubmit = async e => {
 		e.preventDefault();
