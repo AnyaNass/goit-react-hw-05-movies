@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import { getPopularMovies } from '../../servises/getPopularMovies'
 import { Loader } from "components/Loader/Loader";
-import { ErrorMessage } from "components/ErrorMessage/ErrorMessage";
+import ErrorMessage from "components/ErrorMessage/ErrorMessage";
 import { MoviesList } from "components/MoviesList/MoviesList";
+import { Section } from "components/Section/Section";
+import { Container } from "components/Container/Container";
 
 export const PopularMoviesList = () => {
 	const [popularMovies, setPopularMovies] = useState([]);
@@ -34,9 +36,11 @@ export const PopularMoviesList = () => {
 		return;
 	}
 
-	return <>
-		<MoviesList movies={popularMovies} toDetailsPath={'movies/'} />
-		{isLoading && <Loader />}
-		{error && <ErrorMessage text="Sorry, something went wrong" />}
-	</>
+	return <Section>
+		<Container>
+			<MoviesList movies={popularMovies} toDetailsPath={'movies/'} />
+			{isLoading && <Loader />}
+			{error && <ErrorMessage text="Sorry, something went wrong" />}
+		</Container>
+	</Section>
 }

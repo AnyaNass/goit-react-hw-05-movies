@@ -15,13 +15,23 @@ export const Nav = styled.nav`
 `
 
 export const NavItem = styled(NavLink)`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-width: 150px;
+	padding: 8px 0;
 	font-weight: 700;
 	font-size: 25px;
 	color: #fff;
 	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	transition: color 250ms linear, border 250ms linear;
 	
 	&.active{
 		color: red;
+		border: 1px solid red;
 	}
 
 	:hover:not(.active), :focus-visible:not(.active){

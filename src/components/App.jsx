@@ -1,10 +1,13 @@
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import { HomePage } from "pages/HomePage/HomePage";
-import { Layout } from "./Layout/Layout";
-import { MovieDetails } from "./MovieDetails/MovieDetails"
-import { Movies } from "pages/Movies/Movies";
-import { Actors } from "./Actors/Actors";
-import { Reviews } from "./Reviews/Reviews";
+
+const HomePage = lazy(() => import("pages/HomePage/HomePage"))
+const Layout = lazy(() => import("./Layout/Layout"))
+const MovieDetails = lazy(() => import("./MovieDetails/MovieDetails"))
+const Movies = lazy(() => import("pages/Movies/Movies"))
+const Actors = lazy(() => import("./Actors/Actors"))
+const Reviews = lazy(() => import("./Reviews/Reviews"))
+const ErrorMessage = lazy(() => import("./ErrorMessage/ErrorMessage"))
 
 export const App = () => {
 	return <Routes>
@@ -16,6 +19,7 @@ export const App = () => {
 					<Route path="reviews" element={<Reviews />} />
 				</Route>
 			</Route>
+			<Route path="*" element={<ErrorMessage text="Page isn't found" />} />
 		</Route>
 	</Routes>
 };

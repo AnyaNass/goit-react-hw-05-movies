@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import { List, MoviesListItem, Img, Description, MovieTitle, LinkToDetails } from "./MovieList.styled";
 import { checkImage } from '../../helpers/checkImage'
 
 export const MoviesList = ({ movies, location, toDetailsPath = "" }) => {
-
 	return <List>
 		{movies.map(({ id, title, poster_path }) => <MoviesListItem key={id}>
 			<LinkToDetails to={`${toDetailsPath}${id}`} state={{ from: location }}>
@@ -13,4 +13,10 @@ export const MoviesList = ({ movies, location, toDetailsPath = "" }) => {
 			</LinkToDetails>
 		</MoviesListItem>)}
 	</List>
+}
+
+MoviesList.propTypes = {
+	movies: PropTypes.array,
+	location: PropTypes.object,
+	toDetailsPath: PropTypes.string,
 }

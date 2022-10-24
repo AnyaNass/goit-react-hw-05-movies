@@ -6,7 +6,6 @@ export const List = styled.ul`
 	justify-content: center;
 	gap: 30px;
 	flex-wrap: wrap;
-	padding: 30px 0;
 `
 
 export const MoviesListItem = styled.li`

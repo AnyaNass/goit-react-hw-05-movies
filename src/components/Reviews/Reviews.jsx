@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { getReviews } from "servises/getReviews"
-import { ErrorMessage } from "components/ErrorMessage/ErrorMessage";
+import ErrorMessage from "components/ErrorMessage/ErrorMessage";
 import { Loader } from "components/Loader/Loader";
 import { ReviewsList, ReviewsListItem, Author, Review } from './Review.styled'
 
-export const Reviews = () => {
+const Reviews = () => {
 	const [reviews, setReviewss] = useState();
 	const [error, setError] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
@@ -50,3 +50,5 @@ export const Reviews = () => {
 		</>
 	)
 }
+
+export default Reviews

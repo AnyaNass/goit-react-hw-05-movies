@@ -3,10 +3,10 @@ import { useEffect, useState } from "react"
 import { getActors } from "servises/getActors"
 import { ActorsList, Actor, Img, Description, Character } from "./Actors.styled"
 import { Loader } from "components/Loader/Loader"
-import { ErrorMessage } from "components/ErrorMessage/ErrorMessage"
+import ErrorMessage from "components/ErrorMessage/ErrorMessage"
 import { checkImage } from '../../helpers/checkImage'
 
-export const Actors = () => {
+const Actors = () => {
 	const [actors, setActors] = useState();
 	const [error, setError] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +44,7 @@ export const Actors = () => {
 				<Img src={checkImage(profile_path)} alt={name} />
 				<Description>
 					<h2>{name}</h2>
-					<Character><span>Character:</span> {character}</Character>
+					<Character><span>Character: </span>{character ? character : "No information"}</Character>
 				</Description>
 			</Actor>)}
 		</ActorsList>
@@ -53,3 +53,5 @@ export const Actors = () => {
 	</>
 	)
 }
+
+export default Actors

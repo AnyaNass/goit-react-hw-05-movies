@@ -2,11 +2,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Form = styled.form`
-	margin: 15px 0 0;
-	padding: 12px 0;
 	display: flex;
 	gap: 12px;
 	justify-content: center;
+	margin: 0 0 30px 0;
 	align-items: center;
 `
 
