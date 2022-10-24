@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams, useLocation, useSearchParams } from "react-router-dom"
 import { searchMovie } from "servises/searchMovie";
 import ErrorMessage from "components/ErrorMessage/ErrorMessage";
@@ -20,20 +20,20 @@ export const SearchBar = () => {
 	const { id } = useParams();
 	const location = useLocation();
 
-	useEffect(() => {
-		const moviesLink = document.querySelector('[href="/movies"]');
+	// useEffect(() => {
+	// 	const moviesLink = document.querySelector('[href="/movies"]');
 
-		moviesLink.addEventListener('click', () => {
-			setMovies([])
-			setError(false)
-		})
+	// 	moviesLink.addEventListener('click', () => {
+	// 		setMovies([])
+	// 		setError(false)
+	// 	})
 
-		return () => {
-			moviesLink.removeEventListener('click', () => {
-				setMovies([])
-			})
-		}
-	}, [])
+	// 	return () => {
+	// 		moviesLink.removeEventListener('click', () => {
+	// 			setMovies([])
+	// 		})
+	// 	}
+	// }, [])
 
 	const handleSubmit = async e => {
 		e.preventDefault();
