@@ -21,15 +21,13 @@ export const SearchBar = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		const moviesLink = document.querySelector('[href="/movies"]');
-
-		moviesLink.addEventListener('click', () => {
+		document.querySelector('[href="/movies"]').addEventListener('click', () => {
 			setMovies([])
 			setError(false)
 		})
 
 		return () => {
-			moviesLink.removeEventListener('click', () => {
+			document.querySelector('[href="/movies"]').removeEventListener('click', () => {
 				setMovies([])
 			})
 		}
