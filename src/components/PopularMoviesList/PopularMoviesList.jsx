@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
 import { getPopularMovies } from '../../servises/getPopularMovies'
 import { Loader } from "components/Loader/Loader";
 import ErrorMessage from "components/ErrorMessage/ErrorMessage";
