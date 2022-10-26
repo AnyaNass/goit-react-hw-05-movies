@@ -6,6 +6,8 @@ import { BackBtn, ExtraInfoLink, MovieCard, Img, MovieTitle, Score, Subtitle, Ov
 import { FaLongArrowAltLeft } from 'react-icons/fa';
 import { Section } from "components/Section/Section";
 
+import { Suspense } from "react"
+
 const MovieDetails = () => {
 	const [info, setInfo] = useState();
 	const { id } = useParams();
@@ -47,7 +49,9 @@ const MovieDetails = () => {
 					</GenresList>
 				</Description>
 			</MovieCard>
-			<Outlet />
+			<Suspense>
+				<Outlet />
+			</Suspense>
 		</Container>
 	</Section>
 }
